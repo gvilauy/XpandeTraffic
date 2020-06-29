@@ -56,7 +56,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Organization.
 	  * Organizational entity within client
 	  */
-	public void setAD_Org_ID(int AD_Org_ID);
+	public void setAD_Org_ID (int AD_Org_ID);
 
 	/** Get Organization.
 	  * Organizational entity within client
@@ -69,7 +69,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Invoice Partner.
 	  * Business Partner to be invoiced
 	  */
-	public void setBill_BPartner_ID(int Bill_BPartner_ID);
+	public void setBill_BPartner_ID (int Bill_BPartner_ID);
 
 	/** Get Invoice Partner.
 	  * Business Partner to be invoiced
@@ -78,13 +78,26 @@ public interface I_Z_ExpedienteInt
 
 	public I_C_BPartner getBill_BPartner() throws RuntimeException;
 
+    /** Column name BPRepresentado_ID */
+    public static final String COLUMNNAME_BPRepresentado_ID = "BPRepresentado_ID";
+
+	/** Set BPRepresentado_ID.
+	  * Socio de Negocio en Representación
+	  */
+	public void setBPRepresentado_ID (int BPRepresentado_ID);
+
+	/** Get BPRepresentado_ID.
+	  * Socio de Negocio en Representación
+	  */
+	public int getBPRepresentado_ID();
+
     /** Column name C_City_ID */
     public static final String COLUMNNAME_C_City_ID = "C_City_ID";
 
 	/** Set City.
 	  * City
 	  */
-	public void setC_City_ID(int C_City_ID);
+	public void setC_City_ID (int C_City_ID);
 
 	/** Get City.
 	  * City
@@ -99,7 +112,7 @@ public interface I_Z_ExpedienteInt
 	/** Set C_City_To_ID.
 	  * Ciudad Destino
 	  */
-	public void setC_City_To_ID(int C_City_To_ID);
+	public void setC_City_To_ID (int C_City_To_ID);
 
 	/** Get C_City_To_ID.
 	  * Ciudad Destino
@@ -114,7 +127,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Country.
 	  * Country 
 	  */
-	public void setC_Country_ID(int C_Country_ID);
+	public void setC_Country_ID (int C_Country_ID);
 
 	/** Get Country.
 	  * Country 
@@ -129,7 +142,7 @@ public interface I_Z_ExpedienteInt
 	/** Set C_Country_To_ID.
 	  * Pais destino
 	  */
-	public void setC_Country_To_ID(int C_Country_To_ID);
+	public void setC_Country_To_ID (int C_Country_To_ID);
 
 	/** Get C_Country_To_ID.
 	  * Pais destino
@@ -142,7 +155,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Currency.
 	  * The Currency for this record
 	  */
-	public void setC_Currency_ID(int C_Currency_ID);
+	public void setC_Currency_ID (int C_Currency_ID);
 
 	/** Get Currency.
 	  * The Currency for this record
@@ -157,7 +170,7 @@ public interface I_Z_ExpedienteInt
 	/** Set ColetaMercaderia.
 	  * Si se coleta o no mercadería en tráfico
 	  */
-	public void setColetaMercaderia(boolean ColetaMercaderia);
+	public void setColetaMercaderia (boolean ColetaMercaderia);
 
 	/** Get ColetaMercaderia.
 	  * Si se coleta o no mercadería en tráfico
@@ -170,7 +183,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Consolidado.
 	  * Si esta o no consolidado
 	  */
-	public void setConsolidado(boolean Consolidado);
+	public void setConsolidado (boolean Consolidado);
 
 	/** Get Consolidado.
 	  * Si esta o no consolidado
@@ -199,7 +212,7 @@ public interface I_Z_ExpedienteInt
 	/** Set UOM for Volume.
 	  * Standard Unit of Measure for Volume
 	  */
-	public void setC_UOM_Volume_ID(int C_UOM_Volume_ID);
+	public void setC_UOM_Volume_ID (int C_UOM_Volume_ID);
 
 	/** Get UOM for Volume.
 	  * Standard Unit of Measure for Volume
@@ -214,7 +227,7 @@ public interface I_Z_ExpedienteInt
 	/** Set UOM for Weight.
 	  * Standard Unit of Measure for Weight
 	  */
-	public void setC_UOM_Weight_ID(int C_UOM_Weight_ID);
+	public void setC_UOM_Weight_ID (int C_UOM_Weight_ID);
 
 	/** Get UOM for Weight.
 	  * Standard Unit of Measure for Weight
@@ -229,7 +242,7 @@ public interface I_Z_ExpedienteInt
 	/** Set DescBultos.
 	  * Descripción de Bultos
 	  */
-	public void setDescBultos(String DescBultos);
+	public void setDescBultos (String DescBultos);
 
 	/** Get DescBultos.
 	  * Descripción de Bultos
@@ -242,7 +255,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Description.
 	  * Optional short description of the record
 	  */
-	public void setDescription(String Description);
+	public void setDescription (String Description);
 
 	/** Get Description.
 	  * Optional short description of the record
@@ -255,7 +268,7 @@ public interface I_Z_ExpedienteInt
 	/** Set DocVisto.
 	  * Si un determinado documento fue visto o no
 	  */
-	public void setDocVisto(boolean DocVisto);
+	public void setDocVisto (boolean DocVisto);
 
 	/** Get DocVisto.
 	  * Si un determinado documento fue visto o no
@@ -268,7 +281,7 @@ public interface I_Z_ExpedienteInt
 	/** Set EnRepresentacion.
 	  * SI un expediente de tráfico es en Representación o no
 	  */
-	public void setEnRepresentacion(boolean EnRepresentacion);
+	public void setEnRepresentacion (boolean EnRepresentacion);
 
 	/** Get EnRepresentacion.
 	  * SI un expediente de tráfico es en Representación o no
@@ -281,7 +294,7 @@ public interface I_Z_ExpedienteInt
 	/** Set EnTransito.
 	  * SI un expediente de tráfico esta en Tránsito o no
 	  */
-	public void setEnTransito(boolean EnTransito);
+	public void setEnTransito (boolean EnTransito);
 
 	/** Get EnTransito.
 	  * SI un expediente de tráfico esta en Tránsito o no
@@ -294,7 +307,7 @@ public interface I_Z_ExpedienteInt
 	/** Set EsPeligroso.
 	  * Si es peligroso o no
 	  */
-	public void setEsPeligroso(boolean EsPeligroso);
+	public void setEsPeligroso (boolean EsPeligroso);
 
 	/** Get EsPeligroso.
 	  * Si es peligroso o no
@@ -307,7 +320,7 @@ public interface I_Z_ExpedienteInt
 	/** Set EstadoCargaExp.
 	  * Estado de Carga en expediente de Tráfico
 	  */
-	public void setEstadoCargaExp(String EstadoCargaExp);
+	public void setEstadoCargaExp (String EstadoCargaExp);
 
 	/** Get EstadoCargaExp.
 	  * Estado de Carga en expediente de Tráfico
@@ -320,12 +333,38 @@ public interface I_Z_ExpedienteInt
 	/** Set EstadoExp.
 	  * Estado de un expediente de tráfico
 	  */
-	public void setEstadoExp(String EstadoExp);
+	public void setEstadoExp (String EstadoExp);
 
 	/** Get EstadoExp.
 	  * Estado de un expediente de tráfico
 	  */
 	public String getEstadoExp();
+
+    /** Column name Exportador_ID */
+    public static final String COLUMNNAME_Exportador_ID = "Exportador_ID";
+
+	/** Set Exportador_ID.
+	  * Socio de Negocio Exportador
+	  */
+	public void setExportador_ID (int Exportador_ID);
+
+	/** Get Exportador_ID.
+	  * Socio de Negocio Exportador
+	  */
+	public int getExportador_ID();
+
+    /** Column name ExportadorLoc_ID */
+    public static final String COLUMNNAME_ExportadorLoc_ID = "ExportadorLoc_ID";
+
+	/** Set ExportadorLoc_ID.
+	  * Localización del Socio de Negocio Exportador
+	  */
+	public void setExportadorLoc_ID (int ExportadorLoc_ID);
+
+	/** Get ExportadorLoc_ID.
+	  * Localización del Socio de Negocio Exportador
+	  */
+	public int getExportadorLoc_ID();
 
     /** Column name FechaApertura */
     public static final String COLUMNNAME_FechaApertura = "FechaApertura";
@@ -333,7 +372,7 @@ public interface I_Z_ExpedienteInt
 	/** Set FechaApertura.
 	  * Fecha de Apertura de un Documento
 	  */
-	public void setFechaApertura(Timestamp FechaApertura);
+	public void setFechaApertura (Timestamp FechaApertura);
 
 	/** Get FechaApertura.
 	  * Fecha de Apertura de un Documento
@@ -346,7 +385,7 @@ public interface I_Z_ExpedienteInt
 	/** Set FechaDescarga.
 	  * Fecha de descarga de mercadería
 	  */
-	public void setFechaDescarga(Timestamp FechaDescarga);
+	public void setFechaDescarga (Timestamp FechaDescarga);
 
 	/** Get FechaDescarga.
 	  * Fecha de descarga de mercadería
@@ -359,7 +398,7 @@ public interface I_Z_ExpedienteInt
 	/** Set FechaDUA.
 	  * Fecha DUA en Tráfico
 	  */
-	public void setFechaDUA(Timestamp FechaDUA);
+	public void setFechaDUA (Timestamp FechaDUA);
 
 	/** Get FechaDUA.
 	  * Fecha DUA en Tráfico
@@ -372,7 +411,7 @@ public interface I_Z_ExpedienteInt
 	/** Set FechaEmbarque.
 	  * Fecha de embarque de mercadería
 	  */
-	public void setFechaEmbarque(Timestamp FechaEmbarque);
+	public void setFechaEmbarque (Timestamp FechaEmbarque);
 
 	/** Get FechaEmbarque.
 	  * Fecha de embarque de mercadería
@@ -385,12 +424,51 @@ public interface I_Z_ExpedienteInt
 	/** Set FechaEmbarqueReal.
 	  * Fecha de embarque real de mercadería
 	  */
-	public void setFechaEmbarqueReal(Timestamp FechaEmbarqueReal);
+	public void setFechaEmbarqueReal (Timestamp FechaEmbarqueReal);
 
 	/** Get FechaEmbarqueReal.
 	  * Fecha de embarque real de mercadería
 	  */
 	public Timestamp getFechaEmbarqueReal();
+
+    /** Column name ID_Virtual */
+    public static final String COLUMNNAME_ID_Virtual = "ID_Virtual";
+
+	/** Set ID_Virtual.
+	  * Identificador virtual para tablas
+	  */
+	public void setID_Virtual (String ID_Virtual);
+
+	/** Get ID_Virtual.
+	  * Identificador virtual para tablas
+	  */
+	public String getID_Virtual();
+
+    /** Column name Importador_ID */
+    public static final String COLUMNNAME_Importador_ID = "Importador_ID";
+
+	/** Set Importador_ID.
+	  * Socio de Negocio Importador
+	  */
+	public void setImportador_ID (int Importador_ID);
+
+	/** Get Importador_ID.
+	  * Socio de Negocio Importador
+	  */
+	public int getImportador_ID();
+
+    /** Column name ImportadorLoc_ID */
+    public static final String COLUMNNAME_ImportadorLoc_ID = "ImportadorLoc_ID";
+
+	/** Set ImportadorLoc_ID.
+	  * Localización del Socio de Negocio Importador
+	  */
+	public void setImportadorLoc_ID (int ImportadorLoc_ID);
+
+	/** Get ImportadorLoc_ID.
+	  * Localización del Socio de Negocio Importador
+	  */
+	public int getImportadorLoc_ID();
 
     /** Column name IsActive */
     public static final String COLUMNNAME_IsActive = "IsActive";
@@ -398,7 +476,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Active.
 	  * The record is active in the system
 	  */
-	public void setIsActive(boolean IsActive);
+	public void setIsActive (boolean IsActive);
 
 	/** Get Active.
 	  * The record is active in the system
@@ -411,7 +489,7 @@ public interface I_Z_ExpedienteInt
 	/** Set IsSatisfied.
 	  * Si esta o no satisfecha
 	  */
-	public void setIsSatisfied(boolean IsSatisfied);
+	public void setIsSatisfied (boolean IsSatisfied);
 
 	/** Get IsSatisfied.
 	  * Si esta o no satisfecha
@@ -424,7 +502,7 @@ public interface I_Z_ExpedienteInt
 	/** Set NroDUA.
 	  * Número DUA para expediente de Tráfico
 	  */
-	public void setNroDUA(String NroDUA);
+	public void setNroDUA (String NroDUA);
 
 	/** Get NroDUA.
 	  * Número DUA para expediente de Tráfico
@@ -437,7 +515,7 @@ public interface I_Z_ExpedienteInt
 	/** Set NroOnu.
 	  * Número ONU para mercaderías peligrosas en Tráfico
 	  */
-	public void setNroOnu(String NroOnu);
+	public void setNroOnu (String NroOnu);
 
 	/** Get NroOnu.
 	  * Número ONU para mercaderías peligrosas en Tráfico
@@ -450,7 +528,7 @@ public interface I_Z_ExpedienteInt
 	/** Set OrigenMercaderia.
 	  * Descripción del orígen de Mercaderias
 	  */
-	public void setOrigenMercaderia(String OrigenMercaderia);
+	public void setOrigenMercaderia (String OrigenMercaderia);
 
 	/** Get OrigenMercaderia.
 	  * Descripción del orígen de Mercaderias
@@ -463,7 +541,7 @@ public interface I_Z_ExpedienteInt
 	/** Set PesoBruto.
 	  * Peso Bruto de Mercaderías
 	  */
-	public void setPesoBruto(BigDecimal PesoBruto);
+	public void setPesoBruto (BigDecimal PesoBruto);
 
 	/** Get PesoBruto.
 	  * Peso Bruto de Mercaderías
@@ -476,7 +554,7 @@ public interface I_Z_ExpedienteInt
 	/** Set PesoNeto.
 	  * Peso Neto de Mercaderías
 	  */
-	public void setPesoNeto(BigDecimal PesoNeto);
+	public void setPesoNeto (BigDecimal PesoNeto);
 
 	/** Get PesoNeto.
 	  * Peso Neto de Mercaderías
@@ -489,7 +567,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Quantity.
 	  * The Quantity Entered is based on the selected UoM
 	  */
-	public void setQtyEntered(BigDecimal QtyEntered);
+	public void setQtyEntered (BigDecimal QtyEntered);
 
 	/** Get Quantity.
 	  * The Quantity Entered is based on the selected UoM
@@ -502,7 +580,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Reference No.
 	  * Your customer or vendor number at the Business Partner's site
 	  */
-	public void setReferenceNo(String ReferenceNo);
+	public void setReferenceNo (String ReferenceNo);
 
 	/** Get Reference No.
 	  * Your customer or vendor number at the Business Partner's site
@@ -515,12 +593,25 @@ public interface I_Z_ExpedienteInt
 	/** Set TipoCobroExp.
 	  * Tipo de manera de cobro en un expediente de tráfico
 	  */
-	public void setTipoCobroExp(String TipoCobroExp);
+	public void setTipoCobroExp (String TipoCobroExp);
 
 	/** Get TipoCobroExp.
 	  * Tipo de manera de cobro en un expediente de tráfico
 	  */
 	public String getTipoCobroExp();
+
+    /** Column name TipoEnTransito */
+    public static final String COLUMNNAME_TipoEnTransito = "TipoEnTransito";
+
+	/** Set TipoEnTransito.
+	  * Lista de valores posibles para tipos de en tránsito en expedientes de trafico
+	  */
+	public void setTipoEnTransito (String TipoEnTransito);
+
+	/** Get TipoEnTransito.
+	  * Lista de valores posibles para tipos de en tránsito en expedientes de trafico
+	  */
+	public String getTipoEnTransito();
 
     /** Column name TipoExpedienteInt */
     public static final String COLUMNNAME_TipoExpedienteInt = "TipoExpedienteInt";
@@ -528,7 +619,7 @@ public interface I_Z_ExpedienteInt
 	/** Set TipoExpedienteInt.
 	  * Tipo de expediente de tráfico internacional
 	  */
-	public void setTipoExpedienteInt(String TipoExpedienteInt);
+	public void setTipoExpedienteInt (String TipoExpedienteInt);
 
 	/** Get TipoExpedienteInt.
 	  * Tipo de expediente de tráfico internacional
@@ -541,7 +632,7 @@ public interface I_Z_ExpedienteInt
 	/** Set TipoMercaderiaExp.
 	  * Tipo de mercadería descripta en un expediente de tráfico
 	  */
-	public void setTipoMercaderiaExp(String TipoMercaderiaExp);
+	public void setTipoMercaderiaExp (String TipoMercaderiaExp);
 
 	/** Get TipoMercaderiaExp.
 	  * Tipo de mercadería descripta en un expediente de tráfico
@@ -554,7 +645,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Total Amount.
 	  * Total Amount
 	  */
-	public void setTotalAmt(BigDecimal TotalAmt);
+	public void setTotalAmt (BigDecimal TotalAmt);
 
 	/** Get Total Amount.
 	  * Total Amount
@@ -583,7 +674,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Immutable Universally Unique Identifier.
 	  * Immutable Universally Unique Identifier
 	  */
-	public void setUUID(String UUID);
+	public void setUUID (String UUID);
 
 	/** Get Immutable Universally Unique Identifier.
 	  * Immutable Universally Unique Identifier
@@ -596,7 +687,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Search Key.
 	  * Search key for the record in the format required - must be unique
 	  */
-	public void setValue(String Value);
+	public void setValue (String Value);
 
 	/** Get Search Key.
 	  * Search key for the record in the format required - must be unique
@@ -609,7 +700,7 @@ public interface I_Z_ExpedienteInt
 	/** Set Volume.
 	  * Volume of a product
 	  */
-	public void setVolume(BigDecimal Volume);
+	public void setVolume (BigDecimal Volume);
 
 	/** Get Volume.
 	  * Volume of a product
@@ -620,12 +711,12 @@ public interface I_Z_ExpedienteInt
     public static final String COLUMNNAME_Z_AduanaTrafico_ID = "Z_AduanaTrafico_ID";
 
 	/** Set Z_AduanaTrafico ID	  */
-	public void setZ_AduanaTrafico_ID(int Z_AduanaTrafico_ID);
+	public void setZ_AduanaTrafico_ID (int Z_AduanaTrafico_ID);
 
 	/** Get Z_AduanaTrafico ID	  */
 	public int getZ_AduanaTrafico_ID();
 
-	public org.xpande.traffic.model.I_Z_AduanaTrafico getZ_AduanaTrafico() throws RuntimeException;
+	public I_Z_AduanaTrafico getZ_AduanaTrafico() throws RuntimeException;
 
     /** Column name Z_AduanaTrafico_To_ID */
     public static final String COLUMNNAME_Z_AduanaTrafico_To_ID = "Z_AduanaTrafico_To_ID";
@@ -633,29 +724,51 @@ public interface I_Z_ExpedienteInt
 	/** Set Z_AduanaTrafico_To_ID.
 	  * Aduana Destino
 	  */
-	public void setZ_AduanaTrafico_To_ID(int Z_AduanaTrafico_To_ID);
+	public void setZ_AduanaTrafico_To_ID (int Z_AduanaTrafico_To_ID);
 
 	/** Get Z_AduanaTrafico_To_ID.
 	  * Aduana Destino
 	  */
 	public int getZ_AduanaTrafico_To_ID();
 
-	public org.xpande.traffic.model.I_Z_AduanaTrafico getZ_AduanaTrafico_To() throws RuntimeException;
+	public I_Z_AduanaTrafico getZ_AduanaTrafico_To() throws RuntimeException;
 
     /** Column name Z_ExpedienteInt_ID */
     public static final String COLUMNNAME_Z_ExpedienteInt_ID = "Z_ExpedienteInt_ID";
 
 	/** Set Z_ExpedienteInt ID	  */
-	public void setZ_ExpedienteInt_ID(int Z_ExpedienteInt_ID);
+	public void setZ_ExpedienteInt_ID (int Z_ExpedienteInt_ID);
 
 	/** Get Z_ExpedienteInt ID	  */
 	public int getZ_ExpedienteInt_ID();
+
+    /** Column name Z_Incoterm_ID */
+    public static final String COLUMNNAME_Z_Incoterm_ID = "Z_Incoterm_ID";
+
+	/** Set Z_Incoterm ID	  */
+	public void setZ_Incoterm_ID (int Z_Incoterm_ID);
+
+	/** Get Z_Incoterm ID	  */
+	public int getZ_Incoterm_ID();
+
+	public I_Z_Incoterm getZ_Incoterm() throws RuntimeException;
+
+    /** Column name Z_Mercaderia_ID */
+    public static final String COLUMNNAME_Z_Mercaderia_ID = "Z_Mercaderia_ID";
+
+	/** Set Z_Mercaderia ID	  */
+	public void setZ_Mercaderia_ID (int Z_Mercaderia_ID);
+
+	/** Get Z_Mercaderia ID	  */
+	public int getZ_Mercaderia_ID();
+
+	public org.xpande.traffic.model.I_Z_Mercaderia getZ_Mercaderia() throws RuntimeException;
 
     /** Column name Z_TipoBultoCom_ID */
     public static final String COLUMNNAME_Z_TipoBultoCom_ID = "Z_TipoBultoCom_ID";
 
 	/** Set Z_TipoBultoCom ID	  */
-	public void setZ_TipoBultoCom_ID(int Z_TipoBultoCom_ID);
+	public void setZ_TipoBultoCom_ID (int Z_TipoBultoCom_ID);
 
 	/** Get Z_TipoBultoCom ID	  */
 	public int getZ_TipoBultoCom_ID();
@@ -664,7 +777,7 @@ public interface I_Z_ExpedienteInt
     public static final String COLUMNNAME_Z_TrayectoTrafico_ID = "Z_TrayectoTrafico_ID";
 
 	/** Set Z_TrayectoTrafico ID	  */
-	public void setZ_TrayectoTrafico_ID(int Z_TrayectoTrafico_ID);
+	public void setZ_TrayectoTrafico_ID (int Z_TrayectoTrafico_ID);
 
 	/** Get Z_TrayectoTrafico ID	  */
 	public int getZ_TrayectoTrafico_ID();

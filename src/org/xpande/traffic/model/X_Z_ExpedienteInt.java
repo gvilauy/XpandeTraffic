@@ -33,7 +33,7 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20191106L;
+	private static final long serialVersionUID = 20200629L;
 
     /** Standard Constructor */
     public X_Z_ExpedienteInt (Properties ctx, int Z_ExpedienteInt_ID, String trxName)
@@ -62,14 +62,19 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 // N
 			setEstadoExp (null);
 // NUEVO
+			setExportador_ID (0);
+			setExportadorLoc_ID (0);
 			setFechaApertura (new Timestamp( System.currentTimeMillis() ));
 // @#Date@
+			setImportador_ID (0);
+			setImportadorLoc_ID (0);
 			setIsSatisfied (false);
 // N
 			setTipoCobroExp (null);
 			setTipoExpedienteInt (null);
 			setValue (null);
 			setZ_ExpedienteInt_ID (0);
+			setZ_Mercaderia_ID (0);
 			setZ_TrayectoTrafico_ID (0);
         } */
     }
@@ -125,6 +130,29 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 	public int getBill_BPartner_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_Bill_BPartner_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set BPRepresentado_ID.
+		@param BPRepresentado_ID 
+		Socio de Negocio en Representación
+	  */
+	public void setBPRepresentado_ID (int BPRepresentado_ID)
+	{
+		if (BPRepresentado_ID < 1) 
+			set_Value (COLUMNNAME_BPRepresentado_ID, null);
+		else 
+			set_Value (COLUMNNAME_BPRepresentado_ID, Integer.valueOf(BPRepresentado_ID));
+	}
+
+	/** Get BPRepresentado_ID.
+		@return Socio de Negocio en Representación
+	  */
+	public int getBPRepresentado_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_BPRepresentado_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
@@ -553,6 +581,52 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 		return (String)get_Value(COLUMNNAME_EstadoExp);
 	}
 
+	/** Set Exportador_ID.
+		@param Exportador_ID 
+		Socio de Negocio Exportador
+	  */
+	public void setExportador_ID (int Exportador_ID)
+	{
+		if (Exportador_ID < 1) 
+			set_Value (COLUMNNAME_Exportador_ID, null);
+		else 
+			set_Value (COLUMNNAME_Exportador_ID, Integer.valueOf(Exportador_ID));
+	}
+
+	/** Get Exportador_ID.
+		@return Socio de Negocio Exportador
+	  */
+	public int getExportador_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_Exportador_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set ExportadorLoc_ID.
+		@param ExportadorLoc_ID 
+		Localización del Socio de Negocio Exportador
+	  */
+	public void setExportadorLoc_ID (int ExportadorLoc_ID)
+	{
+		if (ExportadorLoc_ID < 1) 
+			set_Value (COLUMNNAME_ExportadorLoc_ID, null);
+		else 
+			set_Value (COLUMNNAME_ExportadorLoc_ID, Integer.valueOf(ExportadorLoc_ID));
+	}
+
+	/** Get ExportadorLoc_ID.
+		@return Localización del Socio de Negocio Exportador
+	  */
+	public int getExportadorLoc_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_ExportadorLoc_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
 	/** Set FechaApertura.
 		@param FechaApertura 
 		Fecha de Apertura de un Documento
@@ -636,6 +710,68 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 	public Timestamp getFechaEmbarqueReal () 
 	{
 		return (Timestamp)get_Value(COLUMNNAME_FechaEmbarqueReal);
+	}
+
+	/** Set ID_Virtual.
+		@param ID_Virtual 
+		Identificador virtual para tablas
+	  */
+	public void setID_Virtual (String ID_Virtual)
+	{
+		throw new IllegalArgumentException ("ID_Virtual is virtual column");	}
+
+	/** Get ID_Virtual.
+		@return Identificador virtual para tablas
+	  */
+	public String getID_Virtual () 
+	{
+		return (String)get_Value(COLUMNNAME_ID_Virtual);
+	}
+
+	/** Set Importador_ID.
+		@param Importador_ID 
+		Socio de Negocio Importador
+	  */
+	public void setImportador_ID (int Importador_ID)
+	{
+		if (Importador_ID < 1) 
+			set_Value (COLUMNNAME_Importador_ID, null);
+		else 
+			set_Value (COLUMNNAME_Importador_ID, Integer.valueOf(Importador_ID));
+	}
+
+	/** Get Importador_ID.
+		@return Socio de Negocio Importador
+	  */
+	public int getImportador_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_Importador_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	/** Set ImportadorLoc_ID.
+		@param ImportadorLoc_ID 
+		Localización del Socio de Negocio Importador
+	  */
+	public void setImportadorLoc_ID (int ImportadorLoc_ID)
+	{
+		if (ImportadorLoc_ID < 1) 
+			set_Value (COLUMNNAME_ImportadorLoc_ID, null);
+		else 
+			set_Value (COLUMNNAME_ImportadorLoc_ID, Integer.valueOf(ImportadorLoc_ID));
+	}
+
+	/** Get ImportadorLoc_ID.
+		@return Localización del Socio de Negocio Importador
+	  */
+	public int getImportadorLoc_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_ImportadorLoc_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
 	}
 
 	/** Set IsSatisfied.
@@ -816,6 +952,30 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 		return (String)get_Value(COLUMNNAME_TipoCobroExp);
 	}
 
+	/** TipoEnTransito AD_Reference_ID=1000069 */
+	public static final int TIPOENTRANSITO_AD_Reference_ID=1000069;
+	/** PARCIAL = PARCIAL */
+	public static final String TIPOENTRANSITO_PARCIAL = "PARCIAL";
+	/** TOTAL = TOTAL */
+	public static final String TIPOENTRANSITO_TOTAL = "TOTAL";
+	/** Set TipoEnTransito.
+		@param TipoEnTransito 
+		Lista de valores posibles para tipos de en tránsito en expedientes de trafico
+	  */
+	public void setTipoEnTransito (String TipoEnTransito)
+	{
+
+		set_Value (COLUMNNAME_TipoEnTransito, TipoEnTransito);
+	}
+
+	/** Get TipoEnTransito.
+		@return Lista de valores posibles para tipos de en tránsito en expedientes de trafico
+	  */
+	public String getTipoEnTransito () 
+	{
+		return (String)get_Value(COLUMNNAME_TipoEnTransito);
+	}
+
 	/** TipoExpedienteInt AD_Reference_ID=1000060 */
 	public static final int TIPOEXPEDIENTEINT_AD_Reference_ID=1000060;
 	/** IMPORTACION = IMPORTACION */
@@ -931,9 +1091,9 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 		return bd;
 	}
 
-	public org.xpande.traffic.model.I_Z_AduanaTrafico getZ_AduanaTrafico() throws RuntimeException
+	public I_Z_AduanaTrafico getZ_AduanaTrafico() throws RuntimeException
     {
-		return (org.xpande.traffic.model.I_Z_AduanaTrafico)MTable.get(getCtx(), org.xpande.traffic.model.I_Z_AduanaTrafico.Table_Name)
+		return (I_Z_AduanaTrafico)MTable.get(getCtx(), I_Z_AduanaTrafico.Table_Name)
 			.getPO(getZ_AduanaTrafico_ID(), get_TrxName());	}
 
 	/** Set Z_AduanaTrafico ID.
@@ -956,9 +1116,9 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 		return ii.intValue();
 	}
 
-	public org.xpande.traffic.model.I_Z_AduanaTrafico getZ_AduanaTrafico_To() throws RuntimeException
+	public I_Z_AduanaTrafico getZ_AduanaTrafico_To() throws RuntimeException
     {
-		return (org.xpande.traffic.model.I_Z_AduanaTrafico)MTable.get(getCtx(), org.xpande.traffic.model.I_Z_AduanaTrafico.Table_Name)
+		return (I_Z_AduanaTrafico)MTable.get(getCtx(), I_Z_AduanaTrafico.Table_Name)
 			.getPO(getZ_AduanaTrafico_To_ID(), get_TrxName());	}
 
 	/** Set Z_AduanaTrafico_To_ID.
@@ -999,6 +1159,56 @@ public class X_Z_ExpedienteInt extends PO implements I_Z_ExpedienteInt, I_Persis
 	public int getZ_ExpedienteInt_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_Z_ExpedienteInt_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public I_Z_Incoterm getZ_Incoterm() throws RuntimeException
+    {
+		return (I_Z_Incoterm)MTable.get(getCtx(), I_Z_Incoterm.Table_Name)
+			.getPO(getZ_Incoterm_ID(), get_TrxName());	}
+
+	/** Set Z_Incoterm ID.
+		@param Z_Incoterm_ID Z_Incoterm ID	  */
+	public void setZ_Incoterm_ID (int Z_Incoterm_ID)
+	{
+		if (Z_Incoterm_ID < 1) 
+			set_Value (COLUMNNAME_Z_Incoterm_ID, null);
+		else 
+			set_Value (COLUMNNAME_Z_Incoterm_ID, Integer.valueOf(Z_Incoterm_ID));
+	}
+
+	/** Get Z_Incoterm ID.
+		@return Z_Incoterm ID	  */
+	public int getZ_Incoterm_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_Z_Incoterm_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public org.xpande.traffic.model.I_Z_Mercaderia getZ_Mercaderia() throws RuntimeException
+    {
+		return (org.xpande.traffic.model.I_Z_Mercaderia)MTable.get(getCtx(), org.xpande.traffic.model.I_Z_Mercaderia.Table_Name)
+			.getPO(getZ_Mercaderia_ID(), get_TrxName());	}
+
+	/** Set Z_Mercaderia ID.
+		@param Z_Mercaderia_ID Z_Mercaderia ID	  */
+	public void setZ_Mercaderia_ID (int Z_Mercaderia_ID)
+	{
+		if (Z_Mercaderia_ID < 1) 
+			set_Value (COLUMNNAME_Z_Mercaderia_ID, null);
+		else 
+			set_Value (COLUMNNAME_Z_Mercaderia_ID, Integer.valueOf(Z_Mercaderia_ID));
+	}
+
+	/** Get Z_Mercaderia ID.
+		@return Z_Mercaderia ID	  */
+	public int getZ_Mercaderia_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_Z_Mercaderia_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();
