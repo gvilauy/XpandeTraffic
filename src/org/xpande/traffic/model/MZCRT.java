@@ -206,7 +206,7 @@ public class MZCRT extends X_Z_CRT{
             String numeroDoc = "";
 
             // Codigo del Pais orígen del Trayecto
-            
+
 
 
 
