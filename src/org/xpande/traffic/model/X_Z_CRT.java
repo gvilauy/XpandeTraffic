@@ -33,7 +33,7 @@ public class X_Z_CRT extends PO implements I_Z_CRT, I_Persistent
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20200629L;
+	private static final long serialVersionUID = 20200702L;
 
     /** Standard Constructor */
     public X_Z_CRT (Properties ctx, int Z_CRT_ID, String trxName)
@@ -42,12 +42,8 @@ public class X_Z_CRT extends PO implements I_Z_CRT, I_Persistent
       /** if (Z_CRT_ID == 0)
         {
 			setDateDoc (new Timestamp( System.currentTimeMillis() ));
-			setDocumentNoRef (null);
 			setEstadoCRT (null);
 // NUEVO
-			setExportador_ID (0);
-			setImportador_ID (0);
-			setTipoExpedienteInt (null);
 			setZ_CRT_ID (0);
 			setZ_ExpedienteInt_ID (0);
         } */
@@ -494,23 +490,6 @@ public class X_Z_CRT extends PO implements I_Z_CRT, I_Persistent
 		return (String)get_Value(COLUMNNAME_LiteralImporte);
 	}
 
-	/** Set LugarEmision.
-		@param LugarEmision 
-		Información de lugar de emisión de documento en Tráfico
-	  */
-	public void setLugarEmision (String LugarEmision)
-	{
-		set_Value (COLUMNNAME_LugarEmision, LugarEmision);
-	}
-
-	/** Get LugarEmision.
-		@return Información de lugar de emisión de documento en Tráfico
-	  */
-	public String getLugarEmision () 
-	{
-		return (String)get_Value(COLUMNNAME_LugarEmision);
-	}
-
 	/** Set LugarEntrega.
 		@param LugarEntrega 
 		Información de lugar de entrega para Tráfico
@@ -879,6 +858,56 @@ public class X_Z_CRT extends PO implements I_Z_CRT, I_Persistent
 	public int getZ_ExpedienteInt_ID () 
 	{
 		Integer ii = (Integer)get_Value(COLUMNNAME_Z_ExpedienteInt_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public I_Z_TrayectoTrafico getZ_TrayectoTrafico() throws RuntimeException
+    {
+		return (I_Z_TrayectoTrafico)MTable.get(getCtx(), I_Z_TrayectoTrafico.Table_Name)
+			.getPO(getZ_TrayectoTrafico_ID(), get_TrxName());	}
+
+	/** Set Z_TrayectoTrafico ID.
+		@param Z_TrayectoTrafico_ID Z_TrayectoTrafico ID	  */
+	public void setZ_TrayectoTrafico_ID (int Z_TrayectoTrafico_ID)
+	{
+		if (Z_TrayectoTrafico_ID < 1) 
+			set_Value (COLUMNNAME_Z_TrayectoTrafico_ID, null);
+		else 
+			set_Value (COLUMNNAME_Z_TrayectoTrafico_ID, Integer.valueOf(Z_TrayectoTrafico_ID));
+	}
+
+	/** Get Z_TrayectoTrafico ID.
+		@return Z_TrayectoTrafico ID	  */
+	public int getZ_TrayectoTrafico_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_Z_TrayectoTrafico_ID);
+		if (ii == null)
+			 return 0;
+		return ii.intValue();
+	}
+
+	public I_Z_TrayectoTrafLoc getZ_TrayectoTrafLoc() throws RuntimeException
+    {
+		return (I_Z_TrayectoTrafLoc)MTable.get(getCtx(), I_Z_TrayectoTrafLoc.Table_Name)
+			.getPO(getZ_TrayectoTrafLoc_ID(), get_TrxName());	}
+
+	/** Set Z_TrayectoTrafLoc ID.
+		@param Z_TrayectoTrafLoc_ID Z_TrayectoTrafLoc ID	  */
+	public void setZ_TrayectoTrafLoc_ID (int Z_TrayectoTrafLoc_ID)
+	{
+		if (Z_TrayectoTrafLoc_ID < 1) 
+			set_Value (COLUMNNAME_Z_TrayectoTrafLoc_ID, null);
+		else 
+			set_Value (COLUMNNAME_Z_TrayectoTrafLoc_ID, Integer.valueOf(Z_TrayectoTrafLoc_ID));
+	}
+
+	/** Get Z_TrayectoTrafLoc ID.
+		@return Z_TrayectoTrafLoc ID	  */
+	public int getZ_TrayectoTrafLoc_ID () 
+	{
+		Integer ii = (Integer)get_Value(COLUMNNAME_Z_TrayectoTrafLoc_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();

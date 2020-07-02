@@ -367,19 +367,6 @@ public interface I_Z_CRT
 	  */
 	public String getLiteralImporte();
 
-    /** Column name LugarEmision */
-    public static final String COLUMNNAME_LugarEmision = "LugarEmision";
-
-	/** Set LugarEmision.
-	  * Información de lugar de emisión de documento en Tráfico
-	  */
-	public void setLugarEmision (String LugarEmision);
-
-	/** Get LugarEmision.
-	  * Información de lugar de emisión de documento en Tráfico
-	  */
-	public String getLugarEmision();
-
     /** Column name LugarEntrega */
     public static final String COLUMNNAME_LugarEntrega = "LugarEntrega";
 
@@ -641,4 +628,26 @@ public interface I_Z_CRT
 	public int getZ_ExpedienteInt_ID();
 
 	public I_Z_ExpedienteInt getZ_ExpedienteInt() throws RuntimeException;
+
+    /** Column name Z_TrayectoTrafico_ID */
+    public static final String COLUMNNAME_Z_TrayectoTrafico_ID = "Z_TrayectoTrafico_ID";
+
+	/** Set Z_TrayectoTrafico ID	  */
+	public void setZ_TrayectoTrafico_ID (int Z_TrayectoTrafico_ID);
+
+	/** Get Z_TrayectoTrafico ID	  */
+	public int getZ_TrayectoTrafico_ID();
+
+	public I_Z_TrayectoTrafico getZ_TrayectoTrafico() throws RuntimeException;
+
+    /** Column name Z_TrayectoTrafLoc_ID */
+    public static final String COLUMNNAME_Z_TrayectoTrafLoc_ID = "Z_TrayectoTrafLoc_ID";
+
+	/** Set Z_TrayectoTrafLoc ID	  */
+	public void setZ_TrayectoTrafLoc_ID (int Z_TrayectoTrafLoc_ID);
+
+	/** Get Z_TrayectoTrafLoc ID	  */
+	public int getZ_TrayectoTrafLoc_ID();
+
+	public I_Z_TrayectoTrafLoc getZ_TrayectoTrafLoc() throws RuntimeException;
 }

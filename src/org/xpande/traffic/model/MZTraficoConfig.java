@@ -67,4 +67,41 @@ public class MZTraficoConfig extends X_Z_TraficoConfig {
 
         return model;
     }
+
+    /***
+     * Obtiene y retorna modelo de certificado de idoneidad según trayecto y organización recibidos.
+     * Xpande. Created by Gabriel Vila on 7/2/20.
+     * @param zTrayectoTraficoID
+     * @param adOrgID
+     * @return
+     */
+    public MZTraficoConfCert getCertificadoIdoneidad(int zTrayectoTraficoID, int adOrgID) {
+
+        String whereClause = X_Z_TraficoConfCert.COLUMNNAME_Z_TraficoConfig_ID + " =" + this.get_ID() +
+                " AND " + X_Z_TraficoConfCert.COLUMNNAME_Z_TrayectoTrafico_ID + " =" + zTrayectoTraficoID +
+                " AND " + X_Z_TraficoConfCert.COLUMNNAME_AD_OrgTrx_ID + " =" + adOrgID;
+
+        MZTraficoConfCert model = new Query(getCtx(), I_Z_TraficoConfCert.Table_Name, whereClause, get_TrxName()).first();
+
+        return model;
+    }
+
+    /***
+     * Obtiene y retorna modelo de secuencias de numeradores según trayecto y organización recibidos.
+     * Xpande. Created by Gabriel Vila on 7/2/20.
+     * @param zTrayectoTraficoID
+     * @param adOrgID
+     * @return
+     */
+    public MZTraficoConfSeq getSecuenciales(int zTrayectoTraficoID, int adOrgID) {
+
+        String whereClause = X_Z_TraficoConfSeq.COLUMNNAME_Z_TraficoConfig_ID + " =" + this.get_ID() +
+                " AND " + X_Z_TraficoConfSeq.COLUMNNAME_Z_TrayectoTrafico_ID + " =" + zTrayectoTraficoID +
+                " AND " + X_Z_TraficoConfSeq.COLUMNNAME_AD_OrgTrx_ID + " =" + adOrgID;
+
+        MZTraficoConfSeq model = new Query(getCtx(), I_Z_TraficoConfSeq.Table_Name, whereClause, get_TrxName()).first();
+
+        return model;
+    }
+
 }

@@ -53,6 +53,7 @@ public class MZCRT extends X_Z_CRT{
 
             MZExpedienteInt expedienteInt = (MZExpedienteInt) this.getZ_ExpedienteInt();
             this.setTipoExpedienteInt(expedienteInt.getTipoExpedienteInt());
+            this.setZ_TrayectoTrafico_ID(expedienteInt.getZ_TrayectoTrafico_ID());
             this.setImportador_ID(expedienteInt.getImportador_ID());
             this.setExportador_ID(expedienteInt.getExportador_ID());
             this.setC_Currency_ID(expedienteInt.getC_Currency_ID());
@@ -74,6 +75,9 @@ public class MZCRT extends X_Z_CRT{
             if (message != null){
                 return message;
             }
+
+            // Numero del CRT
+            this.setNumeroDocumento(expedienteInt);
 
             this.saveEx();
         }
@@ -197,18 +201,44 @@ public class MZCRT extends X_Z_CRT{
      * Xpande. Created by Gabriel Vila on 6/30/20.
      * @return
      */
-    public String setNumeroDocumento(){
+    public String setNumeroDocumento(MZExpedienteInt expedienteInt){
 
         String message = null;
 
         try{
+            if (this.traficoConfig == null){
+                this.traficoConfig = MZTraficoConfig.getDefault(getCtx(), null);
+            }
 
             String numeroDoc = "";
 
             // Codigo del Pais orígen del Trayecto
+            MZTrayectoTrafico trayecto = (MZTrayectoTrafico) expedienteInt.getZ_TrayectoTrafico();
+            MCountry countryOrigen = (MCountry) trayecto.getC_Country();
+            numeroDoc = countryOrigen.getCountryCode();
 
+            // Codigo de certificado de idoneidad para ese trayecto
+            MZTraficoConfCert traficoConfCert = this.traficoConfig.getCertificadoIdoneidad(trayecto.get_ID(), this.getAD_Org_ID());
+            if ((traficoConfCert == null) || (traficoConfCert.get_ID() <= 0)){
+                return "Falta configurar el código de certificado de idoneidad para el Trayecto : " + trayecto.getName() +
+                        " y Organización de este Documento.";
+            }
+            numeroDoc += traficoConfCert.getValue();
 
+            // Numerador según secuncial de CRT para este trayecto y organización.
+            // Seis digitos obligatorios con ceros delante si es necesario.
+            MZTraficoConfSeq traficoConfSeq = this.traficoConfig.getSecuenciales(trayecto.get_ID(), this.getAD_Org_ID());
+            if ((traficoConfSeq == null) || (traficoConfSeq.get_ID() <= 0)){
+                return "Falta configurar los numeradores de documentos, para el Trayecto : " + trayecto.getName() +
+                        " y Organización de este Documento.";
+            }
+            MSequence sequenceDoc = new MSequence(getCtx(), traficoConfSeq.getSequenceCRT_ID(), get_TrxName());
+            int nextID = sequenceDoc.getNextID();
+            sequenceDoc.saveEx();
+            String nextIDAux = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(nextID), 6, "0");
+            numeroDoc += nextIDAux;
 
+            this.setDocumentNoRef(numeroDoc);
 
         }
         catch (Exception e){
