@@ -85,7 +85,7 @@ public class MZCRT extends X_Z_CRT{
             throw new AdempiereException(e);
         }
 
-        return message;
+        return null;
     }
 
     /***
@@ -94,8 +94,6 @@ public class MZCRT extends X_Z_CRT{
      * @return
      */
     private String setDatosRemitente(MZExpedienteInt expedienteInt) {
-
-        String message = null;
 
         try{
             MBPartner partner = new MBPartner(getCtx(), this.getExportador_ID(), null);
@@ -135,7 +133,7 @@ public class MZCRT extends X_Z_CRT{
         catch (Exception e){
             throw new AdempiereException(e);
         }
-        return message;
+        return null;
     }
 
     /***
@@ -144,8 +142,6 @@ public class MZCRT extends X_Z_CRT{
      * @return
      */
     private String setDatosDestinatario(MZExpedienteInt expedienteInt) {
-
-        String message = null;
 
         try{
             MBPartner partner = new MBPartner(getCtx(), this.getImportador_ID(), null);
@@ -193,7 +189,7 @@ public class MZCRT extends X_Z_CRT{
         catch (Exception e){
             throw new AdempiereException(e);
         }
-        return message;
+        return null;
     }
 
     /***
