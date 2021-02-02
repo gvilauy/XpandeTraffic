@@ -32,7 +32,7 @@ public class X_Z_ProformaTrLin extends PO implements I_Z_ProformaTrLin, I_Persis
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20210130L;
+	private static final long serialVersionUID = 20210201L;
 
     /** Standard Constructor */
     public X_Z_ProformaTrLin (Properties ctx, int Z_ProformaTrLin_ID, String trxName)

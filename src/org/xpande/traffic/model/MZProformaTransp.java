@@ -23,6 +23,7 @@ import java.sql.Timestamp;
 import java.util.Properties;
 import org.compiere.model.*;
 import org.compiere.process.DocAction;
+import org.compiere.process.DocOptions;
 import org.compiere.process.DocumentEngine;
 import org.compiere.util.DB;
 import org.compiere.util.Env;
@@ -30,7 +31,7 @@ import org.compiere.util.Env;
 /** Generated Model for Z_ProformaTransp
  *  @author Adempiere (generated) 
  *  @version Release 3.9.1 - $Id$ */
-public class MZProformaTransp extends X_Z_ProformaTransp implements DocAction {
+public class MZProformaTransp extends X_Z_ProformaTransp implements DocAction, DocOptions {
 
 	/**
 	 *
@@ -48,6 +49,30 @@ public class MZProformaTransp extends X_Z_ProformaTransp implements DocAction {
     {
       super (ctx, rs, trxName);
     }
+
+
+	@Override
+	public int customizeValidActions(String docStatus, Object processing, String orderType, String isSOTrx, int AD_Table_ID, String[] docAction, String[] options, int index) {
+
+		int newIndex = 0;
+
+		if ((docStatus.equalsIgnoreCase(STATUS_Drafted))
+				|| (docStatus.equalsIgnoreCase(STATUS_Invalid))
+				|| (docStatus.equalsIgnoreCase(STATUS_InProgress))){
+
+			options[newIndex++] = DocumentEngine.ACTION_Complete;
+
+		}
+		else if (docStatus.equalsIgnoreCase(STATUS_Completed)){
+
+			options[newIndex++] = DocumentEngine.ACTION_ReActivate;
+			//options[newIndex++] = DocumentEngine.ACTION_Void;
+			//options[newIndex++] = DocumentEngine.ACTION_None;
+		}
+
+		return newIndex;
+	}
+
 
 	/**
 	 * 	Get Document Info
@@ -143,12 +168,15 @@ public class MZProformaTransp extends X_Z_ProformaTransp implements DocAction {
 		
 		MDocType dt = MDocType.get(getCtx(), getC_DocType_ID());
 
+		/*
 		//	Std Period open?
 		if (!MPeriod.isOpen(getCtx(), getDateDoc(), dt.getDocBaseType(), getAD_Org_ID()))
 		{
 			m_processMsg = "@PeriodClosed@";
 			return DocAction.STATUS_Invalid;
 		}
+		*/
+
 		//	Add up Amounts
 		m_processMsg = ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_AFTER_PREPARE);
 		if (m_processMsg != null)
@@ -353,7 +381,7 @@ public class MZProformaTransp extends X_Z_ProformaTransp implements DocAction {
 	{
 	//	MPriceList pl = MPriceList.get(getCtx(), getM_PriceList_ID());
 	//	return pl.getC_Currency_ID();
-		return 0;
+		return super.getC_Currency_ID();
 	}	//	getC_Currency_ID
 
     @Override

@@ -33,7 +33,7 @@ public class X_Z_ProformaTransp extends PO implements I_Z_ProformaTransp, I_Pers
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20210130L;
+	private static final long serialVersionUID = 20210201L;
 
     /** Standard Constructor */
     public X_Z_ProformaTransp (Properties ctx, int Z_ProformaTransp_ID, String trxName)
